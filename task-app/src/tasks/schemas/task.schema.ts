@@ -5,16 +5,16 @@ import { Document } from "mongoose";
 
 @Schema()
 export class Task extends Document{
-    @Prop()
+    @Prop({required: true})
     title: string;
 
     @Prop()
     description: string;
 
-    @Prop()
+    @Prop({default: false})
     completed: boolean; 
 
-    @Prop()
+    @Prop({default: Date.now})
     createdAt: Date
 }
 
