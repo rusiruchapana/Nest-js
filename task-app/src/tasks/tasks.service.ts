@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Task, TaskDocument } from './schemas/task.schema';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { Model } from 'mongoose';
@@ -23,6 +23,14 @@ export class TasksService {
 
     async findAll(): Promise<Task[]>{
         return this.taskModel.find().sort({createdAt: -1}).exec();
+    }
+
+    async findById(id: string): Promise<Task>{
+        const task = await this.taskModel.findById(id).exec();
+        if(!task){
+            throw new NotFoundException(`Task with ID ${id} not found   `);
+        }
+        return task;
     }
     
 
