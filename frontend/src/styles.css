@@ -1,1 +1,126 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header {
+  margin-bottom: 20px;
+  h1 {
+    margin: 0;
+    color: #333;
+  }
+}
+
+/* Task List styles */
+.task-list {
+  margin-top: 20px;
+  
+  .no-tasks {
+    color: #666;
+    font-style: italic;
+  }
+}
+
+/* Task Item styles */
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  
+  &.completed {
+    opacity: 0.7;
+    text-decoration: line-through;
+  }
+  
+  .task-content {
+    flex-grow: 1;
+    
+    h3 {
+      margin: 0 0 5px 0;
+    }
+    
+    p {
+      margin: 0 0 5px 0;
+      color: #666;
+    }
+    
+    small {
+      color: #999;
+    }
+  }
+  
+  .task-actions {
+    button {
+      background: #ff4444;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      
+      &:hover {
+        background: #cc0000;
+      }
+    }
+  }
+}
+
+/* Task Form styles */
+.task-form {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  
+  .form-group {
+    margin-bottom: 15px;
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    textarea {
+      min-height: 80px;
+    }
+  }
+  
+  button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    &:hover {
+      background: #45a049;
+    }
+  }
+}

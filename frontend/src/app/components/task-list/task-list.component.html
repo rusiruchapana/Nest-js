@@ -1,1 +1,11 @@
-<p>task-list works!</p>
+<div class="task-list">
+  <h2>My Tasks</h2>
+  <div *ngIf="tasks.length === 0" class="no-tasks">
+    No tasks found. Add one to get started!
+  </div>
+  <app-task-item 
+    *ngFor="let task of tasks" 
+    [task]="task" 
+    (delete)="deleteTask($event)">
+  </app-task-item>
+</div>

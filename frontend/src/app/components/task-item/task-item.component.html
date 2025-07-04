@@ -1,1 +1,10 @@
-<p>task-item works!</p>
+<div class="task-item" [class.completed]="task.completed">
+  <div class="task-content">
+    <h3>{{ task.title }}</h3>
+    <p *ngIf="task.description">{{ task.description }}</p>
+    <small>Created: {{ task.createdAt | date }}</small>
+  </div>
+  <div class="task-actions">
+    <button (click)="onDelete()">Delete</button>
+  </div>
+</div>
