@@ -5,3 +5,10 @@ export interface Task{
     completed: boolean;
     createdAt?: Date;
 }
+
+export interface PaginatedTasks{
+    tasks: Task[];
+    count: number;
+}
+
+
